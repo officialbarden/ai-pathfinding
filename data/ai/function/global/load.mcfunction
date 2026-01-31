@@ -39,13 +39,16 @@ scoreboard players set baseMovementSpeed ai.Values 150
 scoreboard players set baseHealth ai.Values 20000
 scoreboard players set baseSprintSpeed ai.Values 220
 scoreboard players set baseJumpStrength ai.Values 410
-scoreboard players set baseReach ai.Values 3000
+scoreboard players set baseReach ai.Values 500
+scoreboard players set baseViewHalfAngle ai.Values 30000
 
 # // baseViewRange is (x10)
 scoreboard players set baseViewRange ai.Values 300
 
 # // Store Constants for MATH
 scoreboard objectives add ai.Constants dummy
+scoreboard players set -1 ai.Constants -1
+
 scoreboard objectives add ai.MATH dummy
 scoreboard objectives add ai.RAYCAST dummy
 

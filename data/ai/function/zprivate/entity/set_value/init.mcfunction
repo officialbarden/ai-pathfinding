@@ -13,4 +13,8 @@ scoreboard players set @s ai.ChasingEntityMemoryDuration 100
 scoreboard players operation @s ai.ID = .global ai.ID
 scoreboard players add .global ai.ID 1
 
+
+scoreboard players operation @s ai.ViewRange = baseViewRange ai.Values
+scoreboard players operation @s ai.ViewAngle = baseViewHalfAngle ai.Values
+
 tag @s add ai.values.ready
