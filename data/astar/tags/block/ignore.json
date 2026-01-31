@@ -1,0 +1,86 @@
+{
+  "values": [
+    "air",
+    "void_air",
+    "cave_air",
+    "short_grass",
+    "fern",
+    "dead_bush",
+    {
+      "id": "bush",
+      "required": false
+    },
+    {
+      "id": "firefly_bush",
+      "required": false
+    },
+    {
+      "id": "short_dry_grass",
+      "required": false
+    },
+    {
+      "id": "tall_dry_grass",
+      "required": false
+    },
+    "seagrass",
+    "tall_seagrass",
+    "kelp",
+    "snow",
+    "vine",
+    "glow_lichen",
+    {
+      "id": "resin_clump",
+      "required": false
+    },
+    "light",
+    "tall_grass",
+    "large_fern",
+    "structure_void",
+    "warped_roots",
+    "nether_sprouts",
+    "crimson_roots",
+    {
+      "id": "leaf_litter",
+      "required": false
+    },
+    "hanging_roots",
+    "#flowers",
+    "#signs",
+    "#pressure_plates",
+    "#rails",
+    "torch",
+    "wall_torch",
+    "soul_torch",
+    "soul_wall_torch",
+    "redstone_torch",
+    "redstone_wall_torch",
+    "#astar:climbable",
+    "#buttons",
+    "lever",
+    "tripwire_hook",
+    "tripwire",
+    "#banners",
+    {
+      "id": "pale_hanging_moss",
+      "required": false
+    },
+    "red_mushroom",
+    "brown_mushroom",
+    "#carpets",
+    "warped_fungus",
+    "crimson_fungus",
+    "#saplings",
+    "bamboo_sapling",
+    "small_dripleaf",
+    "beetroots",
+    "carrots",
+    "potatoes",
+    "wheat",
+    "melon_stem",
+    "pumpkin_stem",
+    {
+      "id": "torchflower_crop",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+execute unless entity @n[type=marker,tag=astar,tag=!astar.finished,predicate=!astar:is_end,dx=0,dy=2,dz=0] positioned ~.5 ~1.5 ~.5 summon marker run function astar:create

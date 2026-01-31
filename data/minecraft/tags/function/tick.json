@@ -1,0 +1,6 @@
+{
+    "values":[
+        "astar:tick",
+        "ai:global/tick"
+    ]
+}

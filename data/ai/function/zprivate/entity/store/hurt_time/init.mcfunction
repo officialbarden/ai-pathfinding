@@ -1,0 +1,1 @@
+execute store result score @s ai.HurtTime run data get entity @s HurtTime

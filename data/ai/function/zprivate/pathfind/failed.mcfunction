@@ -1,0 +1,1 @@
+scoreboard players set @s ai.State 0

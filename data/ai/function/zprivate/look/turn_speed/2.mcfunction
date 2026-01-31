@@ -1,0 +1,1 @@
+execute at @s anchored eyes rotated as @n[tag=ai.LookVector,predicate=ai:id,type=marker] positioned ^ ^ ^5 rotated as @s positioned ^ ^ ^1 facing entity @s eyes facing ^ ^ ^-1 positioned as @s run rotate @s ~ ~
