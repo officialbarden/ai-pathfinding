@@ -1,5 +1,6 @@
 {
     "values": [
+        "ai:zprivate/entity/mode/init",
         "ai:zprivate/entity/state/init",
         "ai:zprivate/entity/store/init",
         "ai:zprivate/pathfind/move",

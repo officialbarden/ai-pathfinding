@@ -10,7 +10,7 @@ scoreboard players operation @n[tag=new,tag=ai.LookVector,type=marker] ai.ID = @
 tag @n[tag=ai.LookVector,predicate=ai:id] remove new
 
 # // Rotate Marker:
-execute as @n[tag=ai.LookVector,predicate=ai:id,type=marker] rotated ~ ~ run rotate @s ~ ~
+execute rotated ~ ~ as @n[tag=ai.LookVector,predicate=ai:id,type=marker] run rotate @s ~ ~
 
 # // Enable Rotation
 tag @s add ai.LookInDir

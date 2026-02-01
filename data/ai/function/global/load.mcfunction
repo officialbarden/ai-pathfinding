@@ -39,11 +39,11 @@ scoreboard players set baseMovementSpeed ai.Values 150
 scoreboard players set baseHealth ai.Values 20000
 scoreboard players set baseSprintSpeed ai.Values 220
 scoreboard players set baseJumpStrength ai.Values 410
-scoreboard players set baseReach ai.Values 500
 scoreboard players set baseViewHalfAngle ai.Values 30000
 
-# // baseViewRange is (x10)
+# // baseViewRange & baseReach are scaled (x10)
 scoreboard players set baseViewRange ai.Values 300
+scoreboard players set baseReach ai.Values 5
 
 # // Store Constants for MATH
 scoreboard objectives add ai.Constants dummy
@@ -55,3 +55,7 @@ scoreboard objectives add ai.RAYCAST dummy
 # // ID system
 scoreboard objectives add ai.ID dummy
 execute unless score .global ai.ID matches -2147483648..2147483647 run scoreboard players set .global ai.ID 1
+
+# // Scheduled Looping Files:
+function ai:global/loop_3s
+function ai:global/loop_1s
