@@ -7,6 +7,7 @@ execute as @e[tag=!ai.Move, tag=ai, scores={astar.status=0}] at @s run function 
 
 execute as @e[tag=ai, scores={ai.Mode=2}] at @s run function ai:zprivate/entity/mode/chasing_entity/init
 
+execute as @e[tag=ai] rotated as @s on passengers on passengers run rotate @s ~ 0
 
 # // Initialize Basic Values necessary for #ai:logic functions:
 execute as @e[tag=ai, tag=!ai.values.ready] at @s run function ai:zprivate/entity/set_value/init
