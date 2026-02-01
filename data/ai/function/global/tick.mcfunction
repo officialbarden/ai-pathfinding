@@ -1,5 +1,5 @@
 # // Stop Pathfinding if Duration is < 0.
-execute as @e[tag=ai.Move, tag=ai, scores={ai.PathfindingDuration=..0}] at @s run function ai:zprivate/pathfind/stop
+execute as @e[tag=ai.Move, tag=ai, scores={ai.PathfindingDuration=..0}] unless score @s ai.Mode matches 2 at @s run function ai:zprivate/pathfind/stop
 # // Tick Down Pathfinding Duration Timer:
 execute as @e[tag=ai.Move, tag=ai, scores={ai.PathfindingDuration=1..}] run scoreboard players remove @s ai.PathfindingDuration 1
 # // If Pathfinding Failed; Run: (it's important to only run this via tick.mcfunction)
