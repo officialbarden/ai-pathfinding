@@ -16,6 +16,7 @@ execute if data storage ai:bools {TargetEntityClearlyVisible:1, TargetEntityInVi
 execute if data storage ai:bools {TargetEntityClearlyVisible:0, TargetEntityInViewCone:1} run function ai:zprivate/entity/mode/chasing_entity/losing_entity
 
 # // If the Entity lost the target entity, reset chasing entity state:
+execute if score @s ai.RememberingLastPosOfEntity matches ..0 if score @s ai.LostEntityGracePeriod matches 1.. run scoreboard players remove @s ai.LostEntityGracePeriod 1
 execute if score @s ai.RememberingLastPosOfEntity matches ..0 if score @s ai.PathfindingDuration matches ..0 run return run function ai:zprivate/entity/mode/chasing_entity/lost_entity
 
 #function ai:zprivate/entity/mode/chasing_entity/raycast/init

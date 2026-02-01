@@ -23,6 +23,7 @@ scoreboard objectives add ai.HurtTime dummy
 scoreboard objectives add ai.TurnSpeed dummy
 scoreboard objectives add ai.PathfindingDuration dummy
 scoreboard objectives add ai.ChasingEntityMemoryDuration dummy
+scoreboard objectives add ai.LostEntityGracePeriod dummy
 scoreboard objectives add ai.RememberingLastPosOfEntity dummy
 scoreboard objectives add ai.ViewRange dummy
 scoreboard objectives add ai.ViewAngle dummy
@@ -40,6 +41,7 @@ scoreboard players set baseHealth ai.Values 20000
 scoreboard players set baseSprintSpeed ai.Values 220
 scoreboard players set baseJumpStrength ai.Values 410
 scoreboard players set baseViewHalfAngle ai.Values 30000
+scoreboard players set baseLostEntityGracePeriod ai.Values 200
 
 # // baseViewRange & baseReach are scaled (x10)
 scoreboard players set baseViewRange ai.Values 300

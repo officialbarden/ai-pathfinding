@@ -12,7 +12,7 @@ scoreboard players operation #AI.ROT.Y ai.MATH -= #TE.ROT.Y ai.MATH
 execute if score #AI.ROT.Y ai.MATH matches ..-1 run scoreboard players operation #AI.ROT.Y ai.MATH *= -1 ai.Constants
 
 
-title @p actionbar "TARGET ENTITY IN VISIBLE CONE"
+#title @p actionbar "TARGET ENTITY IN VISIBLE CONE"
 execute if score #AI.ROT.X ai.MATH < @s ai.ViewAngle if score #AI.ROT.Y ai.MATH < @s ai.ViewAngle run return 1
-title @p actionbar "TARGET ENTITY NOT IN VISIBLE CONE"
+#title @p actionbar "TARGET ENTITY NOT IN VISIBLE CONE"
 return 0
