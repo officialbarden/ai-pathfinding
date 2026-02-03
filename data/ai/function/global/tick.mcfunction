@@ -23,6 +23,5 @@ execute as @e[tag=ai.pathfinding] at @s run function #ai:logic
 # // Kills
 execute as @e[tag=ai.PathFound] at @s run function ai:zprivate/kill/init
 
-
-# // Door open-close:
-execute as @e[tag=ai.PathFound, type=marker] at @s if block ~ ~ ~ #doors[open=false] run tag @s add ai.PathFound.DoorHere
+# // Give Special Tags based on Block:
+execute as @e[tag=ai.PathFound, type=marker] at @s run function ai:zprivate/block/init

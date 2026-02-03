@@ -9,4 +9,4 @@ data modify storage ai:storage TEMP.MACRO.OPEN_DOORS.DOOR.Properties.NAME set fr
 kill 0-0-0-0-0
 
 # // Open Door Correctly Via Macro:
-function ai:zprivate/entity/actions/interact/doors/macro with storage ai:storage TEMP.MACRO.OPEN_DOORS.DOOR.Properties
+function ai:zprivate/entity/actions/interact/doors/open_macro with storage ai:storage TEMP.MACRO.OPEN_DOORS.DOOR.Properties

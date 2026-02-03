@@ -1,0 +1,1 @@
+execute as @n[tag=ai.PathFound.OpenDoorPendingClosing, predicate=ai:id, predicate=ai:id] at @s if block ~ ~ ~ #wooden_doors[open=true] unless entity @n[tag=ai.pathfinding, predicate=ai:id, distance=..1.2] run function ai:zprivate/entity/actions/interact/doors/close
