@@ -11,6 +11,9 @@ execute if score #AI.ROT.X ai.MATH matches ..-1 run scoreboard players operation
 scoreboard players operation #AI.ROT.Y ai.MATH -= #TE.ROT.Y ai.MATH
 execute if score #AI.ROT.Y ai.MATH matches ..-1 run scoreboard players operation #AI.ROT.Y ai.MATH *= -1 ai.Constants
 
+# // Apply Custom Value; if non-existent, apply base value.
+scoreboard players operation @s ai.ViewAngle = @s ai.baseViewAngle
+execute if score @s ai.ViewAngle matches 0 run scoreboard players operation @s ai.ViewAngle = baseViewHalfAngle ai.Values
 
 #title @p actionbar "TARGET ENTITY IN VISIBLE CONE"
 execute if score #AI.ROT.X ai.MATH < @s ai.ViewAngle if score #AI.ROT.Y ai.MATH < @s ai.ViewAngle run return 1

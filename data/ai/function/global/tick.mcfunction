@@ -6,16 +6,16 @@
 # ai.BeingTargetted = If an Entity with this tag and with the same score as the AI entity in scoreboard ai:id, enters the AI's view cone, the AI will start chasing it IF it's ai.Mode is set to 2 (Chase Mode)
 
 # // Stop Pathfinding if Duration is < 0.
-execute as @e[tag=ai.Move, tag=ai, scores={ai.PathfindingDuration=..0}, tag=!ai.CompletePathBeforeUpdating] unless score @s ai.Mode matches 2 at @s run function ai:zprivate/pathfind/stop
+execute as @e[tag=ai.Move, tag=ai.pathfinding, scores={ai.PathfindingDuration=..0}, tag=!ai.CompletePathBeforeUpdating] unless score @s ai.Mode matches 2 at @s run function ai:zprivate/pathfind/stop
 # // Tick Down Pathfinding Duration Timer:
-execute as @e[tag=ai.Move, tag=ai, scores={ai.PathfindingDuration=1..}] run scoreboard players remove @s ai.PathfindingDuration 1
+execute as @e[tag=ai.Move, tag=ai.pathfinding, scores={ai.PathfindingDuration=1..}] run scoreboard players remove @s ai.PathfindingDuration 1
 # // If Pathfinding Failed; Run: (it's important to only run this via tick.mcfunction)
-execute as @e[tag=!ai.Move, tag=ai, scores={astar.status=0}] at @s run function ai:zprivate/pathfind/failed
+execute as @e[tag=!ai.Move, tag=ai.pathfinding, scores={astar.status=0}] at @s run function ai:zprivate/pathfind/failed
 
 # // Look at the Path it's following:
-#execute as @e[tag=ai, tag=ai.LookOnlyAtPath] at @s run function ai:zprivate/look/path/init
+#execute as @e[tag=ai.pathfinding, tag=ai.LookOnlyAtPath] at @s run function ai:zprivate/look/path/init
 
 # // Initialize Basic Values necessary for #ai:logic functions:
-execute as @e[tag=ai, tag=!ai.values.ready] at @s run function ai:zprivate/entity/set_value/init
+execute as @e[tag=ai.pathfinding, tag=!ai.values.ready] at @s run function ai:zprivate/entity/set_value/init
 # // Run Basic Logic:
-execute as @e[tag=ai] at @s run function #ai:logic
+execute as @e[tag=ai.pathfinding] at @s run function #ai:logic

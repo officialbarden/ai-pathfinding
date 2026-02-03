@@ -21,10 +21,10 @@
 This entity will be the body of your custom entity. This entity may also be the hitbox of your entity, if you decide to not implement a custom hitbox system. If you are on Minecraft Version 1.21.9+, we recommend you choose a [Mannequin Entity](https://minecraft.wiki/w/Mannequin) as your base entity.
 - ### Second, link your entity with your custom entity display.
 Depending on your implementation, link your "custom entity display" with this base entity. This could be something as simple as a static model or as complicated as an [Animated-Java](https://animated-java.dev/)[ Rig](https://animated-java.dev/docs/rigs/overview). Linking can be done via an ID system that the datapack inherently doesn't provide.
-- ### Thirdly, give your entity the `ai` tag
-Using the /tag command, give your entity the `ai` tag:
+- ### Thirdly, give your entity the `ai.pathfinding` tag
+Using the /tag command, give your entity the `ai.pathfinding` tag:
 ```
-/tag <entity> add ai
+/tag <entity> add ai.pathfinding
 ```
 Once this tag is added, this datapack will initialize some base values for the AI. Values like the MovementSpeed of the AI, the State of the AI, the JumpStrength, the Reach, it's View Range and View Cone.
 
@@ -50,13 +50,19 @@ ai.Mode: It stores the "Mode" of the AI.
                           |__________ Roaming Only = 1;
                           |__________ Chasing Target Entity = 2;
 
-ai.PathfindingDuration: It stores how long the AI waits before creating another path.
+Time Values:
+ai.PathfindingDuration: It stores how long the AI waits before creating another path. This value ticks down when a Path is Generated.
 ai.ChasingEntityMemoryDuration: It stores the value of how long the AI can remember an entity until it forgets.
-ai.RememberingLastPosOfEntity: It stores how long it takes for AI to forget the target entity.
-ai.LostEntityGracePeriod: The amount of time the AI waits after it has lost the target entity, before it begins to pathfind.
+ai.baseLostEntityGracePeriod: The amount of time the AI waits after it has lost the target entity, before it begins to pathfind.
 
-ai.MovementSpeed: It stores the Speed of the AI (it changes depending on the value of ai.State)
-ai.JumpStrength: It stores the Jump Strength of the AI.
+AI Values:
+ai.baseMovementSpeed: It stores the Custom Value for Movement Speed of the AI (it changes depending on the value of ai.State) (x1000)
+ai.baseSprintSpeed: It stores the Custom Value for Movement Speed of the AI (it changes depending on the value of ai.State) (x1000)
+ai.baseJumpStrength: It stores the Custom Value for Jump Strength of the AI. (x1000)
+ai.baseViewAngle: It stores the half angle of the View Cone of the AI (x1000)
+ai.baseViewRange: It stores the Radius of the Half Angle of View Cone (x1000)
+
+Setting the score of the AI on a scoreboard with a name with the ai.base... prefix is optional. Not setting them will result in the datapack using the base values assigned below. These base values can be modified as well, as they're stored in the ai.Values scoreboard.
 ```
 
 ```
