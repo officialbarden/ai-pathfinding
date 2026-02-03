@@ -1,6 +1,7 @@
 execute if block ~ ~ ~ #astar:impassable_wall run return run kill @s
 
 execute unless block ~ ~ ~ #astar:ignore run return run function astar:create/step_up
+execute if block ~ ~ ~ #astar:ignore[open=false] run return run function astar:create/step_up
 execute unless score vertical astar.g matches -2147483648..0 if predicate astar:is_climbable run return run function astar:create/step_up
 execute if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor unless score vertical astar.g matches 1..2147483647 run return run function astar:create/step_down
 

@@ -8,8 +8,5 @@ execute if score @s ai.HurtTime matches 1.. run return fail
 # // for ID predicate.
 scoreboard players operation #ID ai.ID = @s ai.ID
 
-# // Modify Rotation Context based on Player State:
+# // Modify Rotation Context based on Player State and Apply Motion:
 function ai:zprivate/entity/move/statewise_motion
-
-# // Apply Motion:
-function ai:zprivate/entity/move/apply

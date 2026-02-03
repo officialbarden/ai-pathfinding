@@ -19,3 +19,10 @@ execute as @e[tag=!ai.Move, tag=ai.pathfinding, scores={astar.status=0}] at @s r
 execute as @e[tag=ai.pathfinding, tag=!ai.values.ready] at @s run function ai:zprivate/entity/set_value/init
 # // Run Basic Logic:
 execute as @e[tag=ai.pathfinding] at @s run function #ai:logic
+
+# // Kills
+execute as @e[tag=ai.PathFound] at @s run function ai:zprivate/kill/init
+
+
+# // Door open-close:
+execute as @e[tag=ai.PathFound, type=marker] at @s if block ~ ~ ~ #doors run tag @s add ai.PathFound.DoorHere

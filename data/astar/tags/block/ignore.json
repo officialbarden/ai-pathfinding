@@ -81,6 +81,8 @@
     {
       "id": "torchflower_crop",
       "required": false
-    }
+    },
+    "#wooden_doors",
+    "iron_door"
   ]
 }

@@ -27,6 +27,7 @@ scoreboard objectives add ai.LostEntityGracePeriod dummy
 scoreboard objectives add ai.RememberingLastPosOfEntity dummy
 scoreboard objectives add ai.ViewRange dummy
 scoreboard objectives add ai.ViewAngle dummy
+scoreboard objectives add ai.CanInteractWithWorld dummy
 
 
 # // AI Configs (x1000):
