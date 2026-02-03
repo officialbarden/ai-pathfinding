@@ -61,6 +61,7 @@ ai.baseSprintSpeed: It stores the Custom Value for Movement Speed of the AI (it 
 ai.baseJumpStrength: It stores the Custom Value for Jump Strength of the AI. (x1000)
 ai.baseViewAngle: It stores the half angle of the View Cone of the AI (x1000)
 ai.baseViewRange: It stores the Radius of the Half Angle of View Cone (x1000)
+ai.baseReach: It stores the Reach of the AI Entity (used for actions/break_block API)
 
 Setting the score of the AI on a scoreboard with a name with the ai.base... prefix is optional. Not setting them will result in the datapack using the base values assigned below. These base values can be modified as well, as they're stored in the ai.Values scoreboard.
 ```
@@ -113,6 +114,21 @@ This function stops the AI from implementing pathfinding logic. Useful if you wa
 "ai:api/set_mode/roaming"
 Usage: execute as <ai> run function ai:api/set_mode/roaming
 Once this function is ran, the AI will become passive. Alternatively, if there are entities of type #ai:node (by default, it only contains marker) and tag "ai.Node", the AI will randomly pathfind to this entity after random intervals of time.
+
+
+"ai:api/actions/break_block"
+Usage: execute as <ai> run function ai:api/actions/break_block
+Once Ran, this entity will shoot a Raycast and breaks the block that got hit by the raycast. This Raycast is shot in the direction the entity faces.
+
+
+"ai:api/toggle/can_open_doors/true | false"
+Usage: execute as <ai> run function ai:api/toggle/can_open_doors/true or false
+Once Ran, this entity will be able to Open (wooden) Doors and Pathfind through Open Iron Doors. Copper Doors have been excluded from this list by default.
+
+"ai:api/toggle/can_close_doors"
+Usage: execute as <ai> run function ai:api/toggle/can-close-doors/true or false
+Once Ran, this entity will be able to Close (wooden) Doors after walking through them, similar to a villager in the base vanilla game. Copper Doors have been excluded from this list by default.
+
 ```
 
 ```
