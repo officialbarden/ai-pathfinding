@@ -6,8 +6,10 @@ scoreboard players operation @s ai.Reach = @s ai.baseReach
 scoreboard players operation @s ai.ViewRange = @s ai.baseViewRange
 scoreboard players operation @s ai.ViewAngle = @s ai.baseViewAngle
 
+scoreboard players set @s ai.CanInteractWithWorld 1
+
 # ==================== Currently Redundant =========================
-scoreboard players set @s ai.MaxDamage 1000
+#scoreboard players set @s ai.MaxDamage 1000
 # scoreboard players set @s ai.Reach 5000
 # scoreboard players set @s ai.AttackSpeed 30
 # ==================================================================
@@ -30,3 +32,5 @@ execute if score @s ai.ViewAngle matches 0 run scoreboard players operation @s a
 execute if score @s ai.Reach matches 0 run scoreboard players operation @s ai.Reach = baseReach ai.Values
 
 tag @s add ai.values.ready
+tag @s add ai.CanOpenDoors
+tag @s add ai.CanCloseDoors
