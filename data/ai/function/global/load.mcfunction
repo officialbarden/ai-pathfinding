@@ -56,7 +56,7 @@ execute unless score baseLostEntityGracePeriod ai.Values matches -2147483648..21
 
 # // baseViewRange & baseReach are scaled (x10)
 execute unless score baseViewRange ai.Values matches -2147483648..2147483647 run scoreboard players set baseViewRange ai.Values 300
-execute unless score baseReach ai.Values matches -2147483648..2147483647 run scoreboard players set baseReach ai.Values 5
+execute unless score baseReach ai.Values matches -2147483648..2147483647 run scoreboard players set baseReach ai.Values 500
 
 # // Store Constants for MATH
 scoreboard objectives add ai.Constants dummy
