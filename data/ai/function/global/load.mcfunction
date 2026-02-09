@@ -27,6 +27,8 @@ scoreboard objectives add ai.LostEntityGracePeriod dummy
 scoreboard objectives add ai.RememberingLastPosOfEntity dummy
 scoreboard objectives add ai.ViewRange dummy
 scoreboard objectives add ai.ViewAngle dummy
+scoreboard objectives add ai.TargetEntity.ViewAngle dummy
+scoreboard objectives add ai.TargetEntity.ViewRange dummy
 scoreboard objectives add ai.CanInteractWithWorld dummy
 
 
@@ -52,11 +54,14 @@ execute unless score baseMovementSpeed ai.Values matches -2147483648..2147483647
 execute unless score baseSprintSpeed ai.Values matches -2147483648..2147483647 run scoreboard players set baseSprintSpeed ai.Values 220
 execute unless score baseJumpStrength ai.Values matches -2147483648..2147483647 run scoreboard players set baseJumpStrength ai.Values 410
 execute unless score baseViewHalfAngle ai.Values matches -2147483648..2147483647 run scoreboard players set baseViewHalfAngle ai.Values 30000
+execute unless score baseTargetEntityViewAngle ai.Values matches -2147483648..2147483647 run scoreboard players set baseTargetEntityViewAngle ai.Values 30000
 execute unless score baseLostEntityGracePeriod ai.Values matches -2147483648..2147483647 run scoreboard players set baseLostEntityGracePeriod ai.Values 200
 
 # // baseViewRange & baseReach are scaled (x10)
 execute unless score baseViewRange ai.Values matches -2147483648..2147483647 run scoreboard players set baseViewRange ai.Values 300
 execute unless score baseReach ai.Values matches -2147483648..2147483647 run scoreboard players set baseReach ai.Values 500
+execute unless score baseTargetEntityViewRange ai.Values matches -2147483648..2147483647 run scoreboard players set baseTargetEntityViewRange ai.Values 1000
+
 
 # // Store Constants for MATH
 scoreboard objectives add ai.Constants dummy
