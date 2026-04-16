@@ -66,6 +66,9 @@ scoreboard objectives add ai.MATH dummy
 scoreboard objectives add ai.RAYCAST dummy
 
 # // ID system
+scoreboard objectives add ai.Chase.ID dummy
+execute unless score .global ai.Chase.ID matches -2147483648..2147483647 run scoreboard players set .global ai.Chase.ID 1
+
 scoreboard objectives add ai.ID dummy
 execute unless score .global ai.ID matches -2147483648..2147483647 run scoreboard players set .global ai.ID 1
 
