@@ -2,6 +2,8 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "nbt": "{OnGround:true}"
+    "flags": {
+      "is_on_ground": true
+    }
   }
 }
