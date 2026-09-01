@@ -3,7 +3,7 @@
 # AI Pathfinder
 - **Force a Custom Entity to Pathfind to a Fixed Position in the World!** (useful for mapmaking)
 - **Force Entities to Chase Other Entities!**
-- **Supported versions: 1.21.2+**
+- **Supported version: 26.3-snapshot-10+**
 
 [AI Pathfinder](https://github.com/officialbarden/ai-pathfinding) datapack allows you to directly plug smart pathfinding to your custom Mob/Monster/NPC for **MapMaking** or **MiniGame** purposes. This datapack does all the heavy lifting of the AI for you — Gone are the days of Retexturing Entities!
 
