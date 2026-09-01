@@ -1,0 +1,11 @@
+{
+  "type": "add",
+  "inputs": [
+    {
+      "type": "score",
+      "target": "this",
+      "score": "astar.f"
+    },
+    "astar:node_cost"
+  ]
+}

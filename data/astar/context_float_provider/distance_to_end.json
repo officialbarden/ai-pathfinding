@@ -1,0 +1,68 @@
+{
+    "type": "length",
+    "inputs": [
+        {
+            "type": "sub",
+            "left": {
+                "type": "floor",
+                "input": {
+                    "type": "storage",
+                    "path": "xyz[0]",
+                    "storage": "astar:math"
+                }
+            },
+            "right": {
+                "type": "from_int",
+                "input": {
+                    "type": "score",
+                    "target": {"type": "fixed","name": "endx"},
+                    "score": "astar.h"
+                }
+            }
+        },
+        {
+            "type": "mul",
+            "inputs": [
+                {
+                    "type": "sub",
+                    "left": {
+                        "type": "floor",
+                        "input": {
+                            "type": "storage",
+                            "path": "xyz[1]",
+                            "storage": "astar:math"
+                        }
+                    },
+                    "right": {
+                        "type": "from_int",
+                        "input": {
+                            "type": "score",
+                            "target": {"type": "fixed","name": "endy"},
+                            "score": "astar.h"
+                        }
+                    }
+                },
+                1.4
+            ]
+        },
+        {
+            "type": "sub",
+            "left": {
+                "type": "floor",
+                "input": {
+                    "type": "storage",
+                    "path": "xyz[2]",
+                    "storage": "astar:math"
+                }
+            },
+            "right": {
+                "type": "from_int",
+                "input": {
+                    "type": "score",
+                    "target": {"type": "fixed","name": "endz"},
+                    "score": "astar.h"
+                }
+            }
+        }
+    ]
+}

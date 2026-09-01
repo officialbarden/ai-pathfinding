@@ -1,29 +1,26 @@
-# give tag if pathfinding is incomplete:
-tag @s add astar.pathfinder
+#stopwatch restart test
 # Fail if target position is in the air & there's infinite max distance
-execute if score maxDistance astar.config matches -2147483648..2147483647 if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor run return fail
+execute if score maxDistance astar.config matches -2147483648.. if block ~ ~-1 ~ #astar:ignore unless block ~ ~ ~ #astar:obstructs_floor run return fail
 # Prepare for next pathfinding
 kill @e[type=marker,tag=astar]
-# End Marker: [I;-1320175556,-1270790790,-1995486549,-810104026]
-# Start Marker: [I;468780849,-1207613367,-1699389816,-335253658]
+# End Marker: [I;-1320175556,-1270790790,-1995486549,-810104026], b14fb83c-b441-457a-890f-4aabcfb6cb26
+# Start Marker: [I;468780849,-1207613367,-1699389816,-335253658], 1bf10731-b805-4849-9ab5-5e88ec046f66
+# Math Display: [I;-746193515,1457341872,-1144427995,-2122059595], d385fd95-56dd-45b0-bbc9-6a258183f0b5
 # Summon Markers for Endpoints
 execute align xyz run summon marker ~.5 ~.5 ~.5 {UUID:[I;-1320175556,-1270790790,-1995486549,-810104026],Tags:["astar"]}
-execute at @s align xyz run summon marker ~.5 ~.5 ~.5 {UUID:[I;468780849,-1207613367,-1699389816,-335253658],Tags:["astar", "astar.destination"]}
-
-
-execute as @e[tag=astar.destination] at @s if entity @n[tag=astar, tag=!astar.destination,distance=..0.5] run tag @s remove astar.pathfinder
-execute as @e[tag=astar.destination] at @s if entity @n[tag=astar, tag=!astar.destination,distance=..0.5] run return run kill @e[tag=astar]
-
+execute at @s align xyz run summon marker ~.5 ~.5 ~.5 {UUID:[I;468780849,-1207613367,-1699389816,-335253658],Tags:["astar"]}
 execute at 1bf10731-b805-4849-9ab5-5e88ec046f66 align xyz if entity @n[predicate=astar:is_end,dx=0,dy=0,dz=0] run return run kill @e[type=marker,tag=astar,dx=0,dy=0,dz=0,limit=2]
 # Reset Id Counter
 scoreboard players reset counter astar.i
+scoreboard players reset finalizer astar.i
 # Summon Display Entity for Distance maths
 execute as d385fd95-56dd-45b0-bbc9-6a258183f0b5 at @s unless loaded ~ ~ ~ run kill @s
 execute unless entity d385fd95-56dd-45b0-bbc9-6a258183f0b5 at @s run summon block_display ~ ~ ~ {UUID:[I;-746193515,1457341872,-1144427995,-2122059595],Tags:["astar.math"],view_range:0,width:0,height:0}
 # Store Pos for maths later
-execute store result score endx astar.h run data get entity b14fb83c-b441-457a-890f-4aabcfb6cb26 Pos[0]
-execute store result score endy astar.h run data get entity b14fb83c-b441-457a-890f-4aabcfb6cb26 Pos[1]
-execute store result score endz astar.h run data get entity b14fb83c-b441-457a-890f-4aabcfb6cb26 Pos[2]
+data modify storage astar:math xyz set from entity b14fb83c-b441-457a-890f-4aabcfb6cb26 Pos
+execute store result score endx astar.h run data get storage astar:math xyz[0]
+execute store result score endy astar.h run data get storage astar:math xyz[1]
+execute store result score endz astar.h run data get storage astar:math xyz[2]
 
 execute store result score counter astar.p run scoreboard players set 1bf10731-b805-4849-9ab5-5e88ec046f66 astar.i 0
 # Reset globals
@@ -35,16 +32,13 @@ execute as 1bf10731-b805-4849-9ab5-5e88ec046f66 at @s summon marker run function
 # Loop till maxCommandChainLength or path is found
 function astar:loop
 # Mark the shortest path
-execute unless entity @n[type=marker,tag=astar,tag=astar.finalizer,tag=!astar.finished] at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar,tag=astar.path,tag=!astar.finished] run function astar:finalize
+execute unless score finalizer astar.i matches -2147483648.. at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar,tag=astar.path,tag=!astar.finished] run function astar:finalize
 execute at b14fb83c-b441-457a-890f-4aabcfb6cb26 as @n[type=marker,tag=astar,tag=astar.finalizer,tag=!astar.finished] run function astar:finalize
 # Only leave the correct path
 kill @e[type=marker,tag=astar,tag=astar.path,tag=!astar.finished]
 kill 1bf10731-b805-4849-9ab5-5e88ec046f66
 kill b14fb83c-b441-457a-890f-4aabcfb6cb26
-
-# Remove tag when pathfinding is complete
-tag @s remove astar.pathfinder
-# Set status to 1 for successful pathfinding.
-scoreboard players set @s astar.status 1
 # Return true if path to destination was found — not if max distance was reached though
+#execute store result score $milliseconds astar.i run stopwatch query test 1000
+#tellraw @s [{color:"green",text:""},"Pathfinding took ", {score:{name:"$milliseconds",objective:"astar.i"}}, "ms"]
 return run execute align xyz if entity @n[type=marker,tag=astar,tag=astar.finalizer,dx=0,dy=0,dz=0]

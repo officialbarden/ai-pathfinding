@@ -1,5 +1,7 @@
 {
   "values": [
-    "#carpets"
+    "#carpets",
+    "comparator",
+    "repeater"
   ]
 }

@@ -1,3 +1,4 @@
+execute unless predicate astar:feet_in_bounds run return run kill @s
 scoreboard players add @s astar.g 20
 scoreboard players remove vertical astar.g 1
 execute if score vertical astar.g < maxFallDistance astar.config unless block ~ ~ ~ #astar:climbable run return run kill @s

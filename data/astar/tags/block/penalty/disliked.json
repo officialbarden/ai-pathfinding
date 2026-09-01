@@ -1,8 +1,8 @@
 {
     "values": [
-        "copper_door",
         "water",
         "lava",
-        "honey_block"
+        "honey_block",
+        "cobweb"
     ]
 }

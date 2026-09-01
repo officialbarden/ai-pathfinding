@@ -1,0 +1,18 @@
+{
+  "type": "number_dispatcher",
+  "cases": [
+    {
+      "condition": "astar:penalty/near_damage",
+      "value": 160
+    },
+    {
+      "condition": "astar:penalty/near_danger",
+      "value": 80
+    },
+    {
+      "condition": "astar:penalty/disliked",
+      "value": 80
+    }
+  ],
+  "default": 0
+}
