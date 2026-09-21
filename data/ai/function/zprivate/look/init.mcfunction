@@ -1,5 +1,5 @@
 # The Rotation Context of this Function file is the Rotation value which the entity interpolates to..
-
+scoreboard players reset @s ai.TurnSpeed
 # // Kill First Marker
 scoreboard players operation #ID ai.ID = @s ai.ID
 kill @e[tag=ai.LookVector,predicate=ai:id,type=marker]

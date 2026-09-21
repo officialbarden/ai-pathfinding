@@ -1,19 +1,24 @@
 {
-  "type": "minecraft:int_value_check",
-  "value": {
-    "type": "minecraft:score",
-    "target": {
-      "type": "minecraft:context",
-      "target": "this"
-    },
-    "score": "ai.ID"
-  },
-  "test": {
-    "type": "minecraft:score",
-    "target": {
-      "type": "minecraft:fixed",
-      "name": "#ID"
-    },
-    "score": "ai.ID"
+  "type": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "ai.ID": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "#ID"
+        },
+        "score": "ai.ID"
+      },
+      "max": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "#ID"
+        },
+        "score": "ai.ID"
+      }
+    }
   }
 }
