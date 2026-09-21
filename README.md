@@ -122,10 +122,3 @@ ai.BeingTargetted = If an Entity with this tag and with the same score as the AI
 ```
 
 </details>
-
-
-
-# Examples
-<iframe align="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/0P-fM50Ya50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<p align="center">Recreating the Minecraft Player with Mannequins!</p>
-
