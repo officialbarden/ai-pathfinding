@@ -3,6 +3,6 @@
         "min_format": 88,
         "max_format": 999,
         "pack_format": 88,
-        "description": "This datapack implements Pathfinding for your Custom Mob!"
+        "description": "This datapack implements Pathfinding for your Custom Mob! AI Pathfinding v1.2.1"
     }
 }
