@@ -18,4 +18,4 @@ execute if score @s ai.ViewAngle matches 0 run scoreboard players operation @s a
 #title @p actionbar "TARGET ENTITY IN VISIBLE CONE"
 execute if score #AI.ROT.X ai.MATH < @s ai.ViewAngle if score #AI.ROT.Y ai.MATH < @s ai.ViewAngle run return 1
 #title @p actionbar "TARGET ENTITY NOT IN VISIBLE CONE"
-return 0
+return fail
